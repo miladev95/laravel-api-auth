@@ -1,0 +1,37 @@
+{
+    "name": "miladev/laravel-api-auth",
+    "description": "API authentication implementation",
+    "version": "1.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miladev",
+            "email": "miladev@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/miladev95/laravel-api-auth",
+    "keywords": [ "miladev", "laravel api", "laravel api auth","api auth" ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Miladev\\LaravelMeta\\": "src/",
+            "Miladev\\LaravelMeta\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Miladev\\LaravelMeta\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Miladev\\LaravelAPIAuth\\APIAuthServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
