@@ -1,24 +1,24 @@
 <?php
 
-namespace Miladev\LaravelMeta;
+namespace Miladev\APIAuth;
 
 use Illuminate\Support\ServiceProvider;
-
 class APIAuthServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-
-        if ($this->app->runningInConsole()) {
+        $stubsDirectory = __DIR__ . '/stubs';
+        $requestFiles = glob("$stubsDirectory/*Request.stub");
+        foreach ($requestFiles as $file) {
+            $fileName = pathinfo($file,PATHINFO_FILENAME);
             $this->publishes([
-                __DIR__.'/../config/meta.php' => config_path('meta.php'),
-            ], 'config');
+                __DIR__."/stubs/$fileName.stub" => app_path("Http/Requests/$fileName.php"),
+            ], 'stubs');
         }
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/meta.php', 'meta');
+
     }
 }

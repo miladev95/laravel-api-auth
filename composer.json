@@ -16,19 +16,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Miladev\\LaravelMeta\\": "src/",
-            "Miladev\\LaravelMeta\\Database\\Factories\\": "database/factories"
+            "Miladev\\APIAuth\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Miladev\\LaravelMeta\\Tests\\": "tests/"
+            "Miladev\\APIAuth\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Miladev\\LaravelAPIAuth\\APIAuthServiceProvider"
+                "Miladev\\APIAuth\\APIAuthServiceProvider"
             ]
         }
     },
