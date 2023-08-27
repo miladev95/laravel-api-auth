@@ -12,7 +12,7 @@
     "homepage": "https://github.com/miladev95/laravel-api-auth",
     "keywords": [ "miladev", "laravel api", "laravel api auth","api auth" ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=7.4"
     },
     "autoload": {
         "psr-4": {
