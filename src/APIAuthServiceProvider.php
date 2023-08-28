@@ -9,7 +9,6 @@ class APIAuthServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        echo "im here" . PHP_EOL;
         $stubsDirectory = __DIR__ . '/stubs';
         $requestFiles = glob("$stubsDirectory/*Request.stub");
         foreach ($requestFiles as $file) {
