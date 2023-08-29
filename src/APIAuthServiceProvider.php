@@ -30,7 +30,7 @@ class APIAuthServiceProvider extends ServiceProvider
         $routeFile = "$stubsDirectory/api.stub";
         $fileName = pathinfo($routeFile, PATHINFO_FILENAME);
 
-        $content = file_get_contents(base_path("routes/$fileName"));
+        $content = file_get_contents(base_path("routes/$fileName.php"));
 
         // check if content already copied
         if ($content !== false) {
