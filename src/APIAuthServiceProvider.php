@@ -27,17 +27,21 @@ class APIAuthServiceProvider extends ServiceProvider
         }
 
 
-
         $routeFile = "$stubsDirectory/api.stub";
         $fileName = pathinfo($routeFile, PATHINFO_FILENAME);
-        $targetFilePath = base_path("routes/$fileName.php");
-        $contentsToAppend = file_get_contents(__DIR__ . "/stubs/$fileName.stub");
-        file_put_contents($targetFilePath, $contentsToAppend, FILE_APPEND);
 
-//        $this->publishes([
-//            __DIR__ . "/stubs/$fileName.stub" => $targetFilePath,
-//        ], 'stubs');
+        $content = file_get_contents(base_path("routes/$fileName"));
 
+        // check if content already copied
+        if ($content !== false) {
+            if (strpos($content, '/signup') === false) {
+                $targetFilePath = base_path("routes/$fileName.php");
+                $contentsToAppend = file_get_contents(__DIR__ . "/stubs/$fileName.stub");
+                file_put_contents($targetFilePath, $contentsToAppend, FILE_APPEND);
+            }
+        } else {
+            echo 'Failed to fetch the content.';
+        }
     }
 
     public function register()
