@@ -1,6 +1,7 @@
 {
     "name": "miladev/laravel-api-auth",
     "description": "API authentication implementation",
+    "version": "1.2",
     "license": "MIT",
     "authors": [
         {
